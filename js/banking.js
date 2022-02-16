@@ -29,9 +29,6 @@ function getCurrentBalance(){
 function updateBalance(amount, isAdd) {
     const balanceTotal = document.getElementById('balance-total');
     
-    /* const balanceText = balanceTotal.innerText;
-    const balanceAmount = parseFloat(balanceText); */
-
     const balanceAmount = getCurrentBalance();
     // new balance from deposit
     if (isAdd == true) {
