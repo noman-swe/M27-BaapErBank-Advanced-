@@ -12,7 +12,15 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
     const newDepositTotalAmount = previousDepositAmount + newDepositAmount;
     //totalDeposit.innerText = newDepositAmount;
     totalDeposit.innerText = newDepositTotalAmount;
-
     // clear input field
     depositInput.value = '';
+
+    // update Balance section
+    const balanceTotal = document.getElementById('balance-total');
+    const balanceText = balanceTotal.innerText;
+    const balanceAmount = parseFloat(balanceText);
+
+    // new balance from deposit
+    const newTotalBalance = balanceAmount + newDepositTotalAmount;
+    balanceTotal.innerText = newTotalBalance; 
 });
