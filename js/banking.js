@@ -18,24 +18,13 @@ function updateTotalField(totalFieldId, depositAmount){
     totalElement.innerText = amount;
 }
 
-
-
 // deposit & balance
 document.getElementById('deposit-btn').addEventListener('click', function(){
     // get new deposit 
    const depositAmount = getInputValue('deposit-input');
 
-
    // get previous deposit
     updateTotalField('deposit-total', depositAmount);
-   /* 
-    const totalDeposit = document.getElementById('deposit-total');
-    const previousDepositAmountText = totalDeposit.innerText;
-    const previousDepositAmount = parseFloat(previousDepositAmountText);
-    const newDepositTotalAmount = previousDepositAmount + depositAmount;
-    //totalDeposit.innerText = newDepositAmount;
-    totalDeposit.innerText = newDepositTotalAmount;
-    */
 
     // update Balance section
     const balanceTotal = document.getElementById('balance-total');
@@ -50,18 +39,9 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
 // withdraw & balance
 document.getElementById('withdraw-btn').addEventListener('click', function(){
      
-    const withdrawAmount = getInputValue('withdraw-input');
-
-    // show withdraw amount 
-    /* const withdrawTotal = document.getElementById('withdraw-total');
-    const withdrawTotalText = withdrawTotal.innerText;
-    const previousWithdrawAmount = parseFloat(withdrawTotalText);
-    const totalWithdrawAmount = previousWithdrawAmount + withdrawAmount;
-    withdrawTotal.innerText = totalWithdrawAmount; */
-    
+    const withdrawAmount = getInputValue('withdraw-input');   
     // show withdraw amount using function
     updateTotalField('withdraw-total', withdrawAmount);
-    
 
     // update balance (balance - withdraw)
     const balanceTotal = document.getElementById('balance-total');
@@ -71,8 +51,4 @@ document.getElementById('withdraw-btn').addEventListener('click', function(){
 
     // set the value in balance section
     balanceTotal.innerText = newBalanceTotal; 
-
-
-    // clear inputs
-    // withdrawInput.value = '';
 });
